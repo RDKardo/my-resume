@@ -22,12 +22,12 @@ const AboutComponent = ({props}: any) => {
         <h2> </h2>
 
         <div>
-                <h3>FirstName: <span>{props.fistName}</span> </h3>
-                <h3>LastName: <span>{props.lastName}</span></h3>
-                <h3>Age: <span>{props.age}</span></h3>
-                <h3>Current Position: <span>{props.currentPosition}</span></h3>
-                <h3>Year's Experience: <span>{props.yearsExperience}</span></h3>
-            </div>
+            <h3>FirstName: <span>{props.fistName}</span> </h3>
+            <h3>LastName: <span>{props.lastName}</span></h3>
+            <h3>Age: <span>{props.age}</span></h3>
+            <h3>Current Position: <span>{props.currentPosition}</span></h3>
+            <h3>Year's Experience: <span>{props.yearsExperience}</span></h3>
+        </div>
 
             {/* </Container> */}
             <button  className={style.block} type="button" onClick={handleClick} >Surprise</button>
