@@ -1,0 +1,13 @@
+.block{
+    color: white;
+    background-color: goldenrod;
+    display: inline-block;
+    text-align: center;
+    padding: 14px 28px;
+    font-size: 30px;
+    text-align: center;
+    margin-left: 45%;
+    justify-content:center;
+    border-radius: 10px;
+}
+ 

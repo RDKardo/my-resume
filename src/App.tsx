@@ -1,11 +1,13 @@
 /* eslint-disable react-hooks/exhaustive-deps */
-import React, { useEffect } from 'react';
+import styled from 'styled-components';
 import './App.css';
-import MyResumeComponent from './Components/MyResumeComponent';
-import HeaderComponent from './Components/General/HeaderComponent';
+import AboutComponent from './Components/AboutComponent';
+import NavBar from './Components/General/NavBar';
+import HomeComponent from './Components/HomeComponent';
+import { BrowserRouter, Route, Routes } from 'react-router-dom'
+
 
 export interface IUser{
-  name:string ;
   fistName:string ;
   lastName:string ;
   age:number;
@@ -17,15 +19,51 @@ export interface IUser{
 
 function App() {
 
-  const info : IUser = ({name:'Ricardo', fistName:'Montaño', lastName:'Arceo',age:29,currentPosition:'FullStack Developer',yearsExperience:4})
+  const info : IUser = ({fistName:'Ricardo', lastName:'Arceo',age:29,currentPosition:'FullStack Developer',yearsExperience:4})
 
   return (
   <>
-    <HeaderComponent/>
-    <MyResumeComponent props={info} />
+    <BrowserRouter>
+      <NavBar />
+      <Layout>
+      <Routes>
+        <Route  path="/" element={<HomeComponent />} />
+        <Route  path="/about" element={<AboutComponent props={info} />} />
+        {/* <Route  path="/contact" element={<Contact />} /> */}
+      </Routes>
+
+      </Layout>
+
+  
+    </BrowserRouter>
   </>
 
   );
 }
 
+
+const Layout = styled.div`
+
+    display:contents;
+    margin-left: 100%;
+    margin-right:100%;
+    justify-content:center;
+
+    h1{
+      display:block;
+      color:blue;
+      margin-left:10%;
+    }
+
+    h3{
+        font-size:20px;
+        text-align:center;
+        color:black;
+    }
+    span{
+        color:blue;
+        font-style:italic;
+        font-size:14px;
+    }
+`
 export default App;
